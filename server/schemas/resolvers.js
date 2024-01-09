@@ -30,7 +30,7 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        SaveBook: async (parent, {bookId}, context) => {
+        saveBook: async (parent, {bookId}, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     {_idd: context.user_id},
@@ -39,7 +39,7 @@ const resolvers = {
                 )
             }
         },
-        RemoveBook: async (parent, {bookId}, context) => {
+        removeBook: async (parent, {bookId}, context) => {
             if(context.user) {
                 const removedbook = await User.findOneandDelete(
                     {_id: context.user._id},

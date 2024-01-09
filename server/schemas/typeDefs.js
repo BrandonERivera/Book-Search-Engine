@@ -37,11 +37,11 @@ const typeDefs = `
         link: String
     }
 
-    type Mutation {
-        login(email: String!, password: String!)
+    type Mutations {
+        login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        saveBook(input: saveBook!)
-        removeBook(bookId: ID!)
+        saveBook(input: saveBook!): User
+        removeBook(bookId: ID!): User
     }
 `
 
